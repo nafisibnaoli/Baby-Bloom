@@ -657,4 +657,50 @@ button {
     .footer-links {
         flex-wrap: wrap;
     }
+}/* REAL PRODUCT IMAGES */
+
+.hero-product {
+    width: 390px;
+    height: 450px;
+    background: #ffffff;
+    border-radius: 190px 190px 25px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 25px 55px rgba(50, 40, 30, .12);
+}
+
+.hero-product img {
+    width: 82%;
+    height: 82%;
+    object-fit: contain;
+}
+
+.category-image {
+    height: 210px;
+    background: #f7f5f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 22px;
+    transition: transform .3s ease;
+}
+
+.category-card:hover .category-image img {
+    transform: scale(1.06);
+}
+
+@media (max-width: 600px) {
+    .hero-product {
+        width: 290px;
+        height: 360px;
+    }
 }
