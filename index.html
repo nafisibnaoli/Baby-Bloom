@@ -208,31 +208,37 @@
                 <div class="product-grid">
 
                     <article class="product-card">
+    <div class="product-image">
+        <img
+            src="https://kytebaby.com/cdn/shop/files/kyte-baby-ankle-socks-ankle-socks-combo-5-pack-in-pastel-32595841089647.jpg?v=1762186708&width=3000"
+            alt="Baby Socks">
+        <span class="badge">BESTSELLER</span>
+    </div>
 
-                        <div class="product-image">
-                            
-                            <span class="badge">BESTSELLER</span>
-                        </div>
+    <div class="product-details">
+        <p class="product-category">Baby Clothing</p>
+        <h3>Baby Socks</h3>
 
-                        <div class="product-details">
-                            <p class="product-category">Toys</p>
-                            <h3>Soft Cuddle Bear</h3>
+        <div class="product-bottom">
+            <strong>৳ 490</strong>
+            <button class="add-btn">+</button>
 
-                            <div class="product-bottom">
-                                <strong>৳ 1,290</strong>
-                                <button class="add-btn">+</button>
-                            </div>
-                        </div>
-
-                    </article>
+<div class="product-quantity">
+    <button class="quantity-minus">−</button>
+    <span class="quantity-value">1</span>
+    <button class="quantity-plus">+</button>
+</div>
+        </div>
+    </div>
+</article>
 
 
                     <article class="product-card">
 
                         <div class="product-image">
-                            🍼
-                            <span class="badge">NEW</span>
-                        </div>
+    <img src="https://cdn-img.oraimo.com/fit-in/600x600/CI/product/2025/09/11/oraimo-Baby-Fruit-Food-Feeder-FruitEase-Baby-Fruit-Food-Feeder-OBC-272A.png" alt="Little Bloom Bottle">
+    <span class="badge">NEW</span>
+</div>
 
                         <div class="product-details">
                             <p class="product-category">Feeding</p>
@@ -241,6 +247,12 @@
                             <div class="product-bottom">
                                 <strong>৳ 890</strong>
                                 <button class="add-btn">+</button>
+
+<div class="product-quantity">
+    <button class="quantity-minus">−</button>
+    <span class="quantity-value">1</span>
+    <button class="quantity-plus">+</button>
+</div>
                             </div>
                         </div>
 
@@ -250,8 +262,8 @@
                     <article class="product-card">
 
                         <div class="product-image">
-                            
-                        </div>
+    <img src="https://tricofield.online/cdn/shop/files/12620501_1W_01.jpg?v=1770361850&width=533" alt="Cloud Soft Romper">
+</div>
 
                         <div class="product-details">
                             <p class="product-category">Clothing</p>
@@ -260,6 +272,12 @@
                             <div class="product-bottom">
                                 <strong>৳ 1,150</strong>
                                 <button class="add-btn">+</button>
+
+<div class="product-quantity">
+    <button class="quantity-minus">−</button>
+    <span class="quantity-value">1</span>
+    <button class="quantity-plus">+</button>
+</div>
                             </div>
                         </div>
 
@@ -269,9 +287,9 @@
                     <article class="product-card">
 
                         <div class="product-image">
-                            🛁
-                            <span class="badge">POPULAR</span>
-                        </div>
+    <img src="https://lifeadmin-store.s3.ap-south-1.amazonaws.com/products/baby-magic-calming-bath-16-5-oz/129240-3.jpg" alt="Gentle Bath Set">
+    <span class="badge">POPULAR</span>
+</div>
 
                         <div class="product-details">
                             <p class="product-category">Baby Care</p>
@@ -280,6 +298,12 @@
                             <div class="product-bottom">
                                 <strong>৳ 1,490</strong>
                                 <button class="add-btn">+</button>
+
+<div class="product-quantity">
+    <button class="quantity-minus">−</button>
+    <span class="quantity-value">1</span>
+    <button class="quantity-plus">+</button>
+</div>
                             </div>
                         </div>
 
@@ -316,38 +340,381 @@
             </div>
 
         </section>
+<!-- PRODUCT DETAILS MODAL -->
+<div class="product-modal" id="productModal">
+    <div class="modal-overlay" onclick="closeProductModal()"></div>
 
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeProductModal()">×</button>
+
+        <div class="modal-image">
+            <img id="modalProductImage" src="" alt="">
+        </div>
+
+        <div class="modal-content">
+            <p id="modalProductCategory" class="product-category"></p>
+            <h2 id="modalProductName"></h2>
+            <strong id="modalProductPrice"></strong>
+
+            <p id="modalProductDescription"></p>
+
+            <button class="modal-add-btn" onclick="addToCartFromModal()">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
     </main>
 
 
     <!-- Footer -->
 
-    <footer class="footer">
+    <footer class="site-footer">
+    <div class="footer-brand">SpanWeb</div>
+    <p>Bridging Your Ideas to the Web</p>
+    <div class="footer-line"></div>
+    <small>© 2026 SpanWeb. All Rights Reserved.</small>
+</footer>
+<!-- CART SIDE PANEL -->
 
-        <div class="container footer-content">
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 
-            <div>
-                <a href="#" class="logo">
-                    <span class="logo-icon">✿</span>
-                    <span>Baby Bloom</span>
-                </a>
+<aside class="cart-panel" id="cartPanel">
 
-                <p>
-                    Little things, big love.
-                </p>
-            </div>
+    <div class="cart-header">
+        <div>
+            <p class="eyebrow">YOUR SHOPPING BAG</p>
+            <h2>Your Cart</h2>
+        </div>
 
-            <div class="footer-links">
-                <a href="#shop">Shop</a>
-                <a href="#categories">Categories</a>
-                <a href="#about">About</a>
-                <a href="#">Contact</a>
+        <button class="cart-close" onclick="closeCart()">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+        <p class="empty-cart">
+            Your cart is empty.
+        </p>
+    </div>
+
+    <div class="cart-footer">
+
+        <div class="cart-subtotal">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">৳ 0</strong>
+        </div>
+
+        <button class="checkout-btn">
+            Proceed to Checkout →
+        </button>
+
+    </div>
+
+</aside>
+<!-- CHECKOUT PANEL -->
+
+<div class="checkout-overlay" id="checkoutOverlay" onclick="closeCheckout()"></div>
+
+<section class="checkout-panel" id="checkoutPanel">
+
+    <div class="checkout-header">
+
+        <div>
+            <p class="eyebrow">BABY BLOOM</p>
+            <h2>Checkout</h2>
+        </div>
+
+        <button
+            class="checkout-close"
+            onclick="closeCheckout()">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="checkout-body">
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="checkout-summary">
+
+            <h3>Your Order</h3>
+
+            <div id="checkoutItems"></div>
+
+            <div class="checkout-total">
+                <span>Total</span>
+                <strong id="checkoutTotal">৳ 0</strong>
             </div>
 
         </div>
 
-    </footer>
 
+        <!-- CUSTOMER INFORMATION -->
+
+        <form class="checkout-form" id="checkoutForm">
+
+            <h3>Delivery Information</h3>
+
+
+            <label>
+                Full Name
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your full name"
+                    required>
+            </label>
+
+
+            <label>
+                Mobile Number
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="01XXXXXXXXX"
+                    required>
+            </label>
+
+
+            <label>
+                District
+
+                <select id="customerDistrict" required>
+
+                    <option value="">
+                        Select District
+                    </option>
+
+                    <option>Dhaka</option>
+                    <option>Chattogram</option>
+                    <option>Rajshahi</option>
+                    <option>Khulna</option>
+                    <option>Barishal</option>
+                    <option>Sylhet</option>
+                    <option>Rangpur</option>
+                    <option>Mymensingh</option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+                Delivery Address
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="House, Road, Area..."
+                    required></textarea>
+
+            </label>
+
+
+            <!-- PAYMENT -->
+
+            <div class="payment-method">
+
+                <h3>Payment Method</h3>
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="cod"
+                        checked>
+
+                    <span>
+                        <strong>Cash on Delivery</strong>
+
+                        <small>
+                            Pay when your order arrives
+                        </small>
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <!-- BACK BUTTON -->
+
+            <button
+    type="button"
+    class="back-shopping-btn"
+    onclick="backToCart()">
+
+    ← Back to Cart
+
+</button>
+
+
+            <!-- PLACE ORDER -->
+
+            <button
+                type="submit"
+                class="place-order-btn">
+
+                Place Order →
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+<!-- ORDER CONFIRMATION -->
+
+<div class="confirmation-overlay" id="confirmationOverlay"></div>
+
+<section class="confirmation-panel" id="confirmationPanel">
+
+    <div class="confirmation-box">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <p class="eyebrow">BABY BLOOM</p>
+
+        <h2>Order Confirmed!</h2>
+
+        <p class="confirmation-message">
+            Thank you for your order.
+            Your order has been received successfully.
+        </p>
+
+
+        <!-- CUSTOMER -->
+
+        <div class="confirmation-customer">
+
+            <span>Customer</span>
+
+            <strong id="confirmationName">
+                -
+            </strong>
+
+        </div>
+
+
+        <!-- ORDER ITEMS -->
+
+        <div class="confirmation-items">
+
+            <h3>Order Summary</h3>
+
+            <div id="confirmationItems"></div>
+
+        </div>
+
+
+        <!-- TOTAL -->
+
+        <div class="confirmation-total">
+
+            <span>Total</span>
+
+            <strong id="confirmationTotal">
+                ৳ 0
+            </strong>
+
+        </div>
+
+
+        <!-- PAYMENT -->
+
+        <div class="confirmation-payment">
+
+            <span>Payment Method</span>
+
+            <strong>Cash on Delivery</strong>
+
+        </div>
+
+
+        <!-- CONTINUE SHOPPING -->
+
+        <button
+            class="continue-shopping-btn"
+            onclick="continueShopping()">
+
+            Continue Shopping →
+
+        </button>
+
+    </div>
+
+</section>
+<!-- PLACE ORDER CONFIRMATION -->
+
+<div
+    class="place-order-confirm-overlay"
+    id="placeOrderConfirmOverlay"
+    onclick="closePlaceOrderConfirmation()">
+</div>
+
+<section
+    class="place-order-confirm-panel"
+    id="placeOrderConfirmPanel">
+
+    <div class="place-order-confirm-box">
+
+        <div class="confirm-warning-icon">
+            ?
+        </div>
+
+        <p class="eyebrow">PLEASE CONFIRM</p>
+
+        <h2>Place this order?</h2>
+
+        <p class="confirm-order-message">
+            Please make sure your delivery information
+            is correct before placing the order.
+        </p>
+
+
+        <div class="confirm-order-total">
+
+            <span>Order Total</span>
+
+            <strong id="confirmOrderTotal">
+                ৳ 0
+            </strong>
+
+        </div>
+
+
+        <div class="confirm-order-buttons">
+
+            <button
+                type="button"
+                class="confirm-cancel-btn"
+                onclick="closePlaceOrderConfirmation()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="confirm-place-btn"
+                onclick="confirmPlaceOrder()">
+
+                Yes, Place Order
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
 
     <script src="script.js"></script>
 
